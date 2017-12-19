@@ -1,0 +1,48 @@
+public class FlugzeugDepartures {
+
+	int abflugzeit;
+	boolean gestartet;
+	int flugnummer;
+	String bezeichnung;
+	String flugort;
+	int counter;
+	int gate;
+	
+	static int anzahlFlugzeuge = 0;
+	
+	FlugzeugDepartures() {
+		anzahlFlugzeuge++;
+		gestartet = false;
+		double flieger = (3*Math.PI)*(20*Math.random());
+		flugnummer = (int)(flieger);
+	}
+	
+	FlugzeugDepartures(int abflugzeit, String bezeichnung, String flugort, int counter, int gate) {
+		this();
+		this.abflugzeit = abflugzeit;
+		this.bezeichnung = bezeichnung;
+		this.flugort = flugort;
+		this.gate = gate;
+		this.counter = counter;
+	}
+	
+	public void ausgabe() {
+		System.out.println("--------------------------------------------------------------------");
+		System.out.println("Flight"+"\t"+"Departures"+"\t"+"TakeOff"+"\t"+"FlightTo"+"\t"+"\t"+"Counter"+"\t"+"Gate");
+		System.out.println("TK1"+flugnummer+"\t"+gestartet+"\t"+"\t"+abflugzeit+":00h\t"+flugort+"\t"+"\t"+"\t"+counter+"\t"+gate);
+	}
+	
+	public void setgestartet(boolean zustand) {
+		gestartet = zustand;
+	}
+	
+	public static int naechsteAbflugzeit(FlugzeugDepartures[] liste){
+		int min = liste[0].abflugzeit;
+		
+		for(int i=1;i<liste.length;i++){
+			if(liste[i].abflugzeit < min)
+				min = liste[i].abflugzeit;
+		}
+		return min;
+	}
+}
