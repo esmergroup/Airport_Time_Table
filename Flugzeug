@@ -1,0 +1,43 @@
+public class Flugzeug {
+	int 	ankunftszeit;
+	boolean gelandet;
+	double 	treibstoff;
+	int 	nummer;
+	String 	bezeichnung;
+	
+	static int anzahlFlugzeuge = 0;
+	
+	Flugzeug(){
+		anzahlFlugzeuge++;
+		gelandet = false;
+		double flieger = (2*Math.PI)*(20*Math.random());
+		nummer   = (int)(flieger);
+	}
+	
+	Flugzeug(int ankunftszeit, double treibstoff, String bezeichnung){
+		this();
+		this.ankunftszeit = ankunftszeit;
+		this.treibstoff   = treibstoff;
+		this.bezeichnung  = bezeichnung;
+	}
+	
+	public void ausgabe(){
+		System.out.println("----------------------------------------------------------------");
+		System.out.println("Arrival"+ "\t" + "landed" + "\t" + "Fuel" + "\t" + "Gate" + "\t"+"\t" + "Flight");
+		System.out.println(ankunftszeit + ":00 h\t" + gelandet +"\t" + treibstoff+"%"+"\t" + nummer +"\t" + bezeichnung);
+	}
+	
+	public void setgelandet(boolean zustand){
+		gelandet = zustand;
+	}
+	
+	public static int naechsteAntkunftszeit(Flugzeug[] liste){
+		int min = liste[0].ankunftszeit;
+		
+		for(int i=1;i<liste.length;i++){
+			if(liste[i].ankunftszeit < min)
+				min = liste[i].ankunftszeit;
+		}
+		return min;
+	}		
+}
