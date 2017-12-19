@@ -1,0 +1,83 @@
+public class ProjektKlasse {
+
+	public static void main(String[] args) {
+		
+		System.out.println("--------------------------DEPARTURES--------------------------------");
+	
+		FlugzeugDepartures[] liste = new FlugzeugDepartures[5];
+		
+		for(int i = 0; i < liste.length; i++) {
+			
+			int abflugzeit = (int)(25*Math.random());
+			String bezeichnung = "\t"+"Turkish Airlines TK 761"+i;
+			double fluortwaaehler = (int)(10*Math.random());
+			double sollen = (int)(300*Math.random());
+			int counter = (int)sollen;
+			double tuer = (int)(10*Math.random());
+			int gate = (int)tuer;
+			if(fluortwaaehler == 0) {
+				String flugort = "Trabzon";
+				liste[i] = new FlugzeugDepartures(abflugzeit, bezeichnung, flugort, counter, gate);
+				liste[i].ausgabe();
+			}
+			else if(fluortwaaehler == 1) {
+				String flugort = "Ankara";
+				liste[i] = new FlugzeugDepartures(abflugzeit, bezeichnung, flugort, counter, gate);
+				liste[i].ausgabe();
+			}
+			else if(fluortwaaehler == 2) {
+				String flugort = "Ataturk";
+				liste[i] = new FlugzeugDepartures(abflugzeit, bezeichnung, flugort, counter, gate);
+				liste[i].ausgabe();
+			}
+			else if(fluortwaaehler == 3) {
+				String flugort = "Bursa";
+				liste[i] = new FlugzeugDepartures(abflugzeit, bezeichnung, flugort, counter, gate);
+				liste[i].ausgabe();
+			}
+			else if(fluortwaaehler == 4) {
+				String flugort = "Izmir";
+				liste[i] = new FlugzeugDepartures(abflugzeit, bezeichnung, flugort, counter, gate);
+				liste[i].ausgabe();
+			}
+			else if(fluortwaaehler == 5) {
+				String flugort = "Antalya";
+				liste[i] = new FlugzeugDepartures(abflugzeit, bezeichnung, flugort, counter, gate);
+				liste[i].ausgabe();
+			}
+			else if(fluortwaaehler == 6) {
+				String flugort = "Adana";
+				liste[i] = new FlugzeugDepartures(abflugzeit, bezeichnung, flugort, counter, gate);
+				liste[i].ausgabe();
+			}
+			else if(fluortwaaehler == 7) {
+				String flugort = "Van";
+				liste[i] = new FlugzeugDepartures(abflugzeit, bezeichnung, flugort, counter, gate);
+				liste[i].ausgabe();
+			}
+			else if(fluortwaaehler == 8) {
+				String flugort = "Kars";
+				liste[i] = new FlugzeugDepartures(abflugzeit, bezeichnung, flugort, counter, gate);
+				liste[i].ausgabe();
+			}
+			else if(fluortwaaehler == 9) {
+				String flugort = "Erzurum";
+				liste[i] = new FlugzeugDepartures(abflugzeit, bezeichnung, flugort, counter, gate);
+				liste[i].ausgabe();
+			}
+		}
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println("-------------------------ARRIVALS-------------------------------");
+		Flugzeug[] liste1 = new Flugzeug[4];
+		
+		for(int i=0; i<liste1.length; i++){
+			int ankunftszeit 	= (int)(25*Math.random());
+			double treibstoff 	= ((int)(10001*Math.random()))/100.;
+			String bezeichnung 	= "\t"+"Turkish Airlines TK 148" + i; 
+			liste1[i] = new Flugzeug(ankunftszeit, treibstoff, bezeichnung);
+			liste1[i].ausgabe();
+		}
+	}
+}
